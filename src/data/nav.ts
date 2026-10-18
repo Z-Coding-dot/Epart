@@ -14,6 +14,5 @@ export const navItems: NavItem[] = [
     ],
   },
   { to: '/portfolio', label: 'نمونه کارها' },
-  { to: '/blog', label: 'مقالات' },
   { to: '/contact', label: 'تماس' },
 ]

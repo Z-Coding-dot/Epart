@@ -8,7 +8,7 @@ export const settings = {
   tagline: 'شریک دیجیتال کسب‌وکار شما',
   phoneDisplay: '+93 70 000 0000',
   phoneDigits: '93700000000',
-  whatsappNumber: '93700000000',
+  whatsappNumber: '93795165343',
   email: '',
   address: '',
   socials: {

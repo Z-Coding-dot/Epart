@@ -26,14 +26,6 @@ export type Project = {
   placeholder: boolean
 }
 
-export type Article = {
-  slug: string
-  title: string
-  excerpt: string
-  date: string
-  placeholder: boolean
-}
-
 export type NavItem = {
   to: string
   label: string
