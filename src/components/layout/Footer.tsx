@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Container } from '@/components/ui/Container'
 import { Logo } from '@/components/shared/Logo'
+import { InstallPrompt } from '@/components/shared/InstallPrompt'
 import { navItems } from '@/data/nav'
 import { settings } from '@/data/settings'
 import { toFaDigits } from '@/utils/format'
@@ -28,6 +29,7 @@ export function Footer() {
               <Logo />
               <p>{settings.tagline}</p>
               <span className="footer-signature">{footerCopy.signature}</span>
+              <InstallPrompt />
             </div>
             <nav aria-label={footerCopy.pages}>
               <h3>{footerCopy.pages}</h3>

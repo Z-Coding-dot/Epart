@@ -6,7 +6,6 @@ import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { MobileCTABar } from '@/components/layout/MobileCTABar'
 import { WhatsAppFloat } from '@/components/layout/WhatsAppFloat'
-import { InstallPrompt } from '@/components/shared/InstallPrompt'
 import { UpdateToast } from '@/components/shared/UpdateToast'
 
 export function MainLayout() {
@@ -34,7 +33,6 @@ export function MainLayout() {
       <WhatsAppFloat />
       <BackToTop />
       <MobileCTABar />
-      <InstallPrompt />
       <UpdateToast />
     </div>
   )
