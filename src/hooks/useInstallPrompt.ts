@@ -5,15 +5,15 @@ type BeforeInstallPromptEvent = Event & {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>
 }
 
-function isIos() {
-  return /iphone|ipad|ipod/i.test(navigator.userAgent)
-}
-
 export function useInstallPrompt() {
   const [event, setEvent] = useState<BeforeInstallPromptEvent | null>(null)
   const [installed, setInstalled] = useState(false)
 
   useEffect(() => {
+    const standalone = window.matchMedia('(display-mode: standalone)')
+    const isStandalone = () => standalone.matches || Boolean((navigator as Navigator & { standalone?: boolean }).standalone)
+    const onDisplayChange = () => setInstalled(isStandalone())
+    onDisplayChange()
     const onPrompt = (e: Event) => {
       e.preventDefault()
       setEvent(e as BeforeInstallPromptEvent)
@@ -24,13 +24,15 @@ export function useInstallPrompt() {
     }
     window.addEventListener('beforeinstallprompt', onPrompt)
     window.addEventListener('appinstalled', onInstalled)
+    standalone.addEventListener('change', onDisplayChange)
     return () => {
       window.removeEventListener('beforeinstallprompt', onPrompt)
       window.removeEventListener('appinstalled', onInstalled)
+      standalone.removeEventListener('change', onDisplayChange)
     }
   }, [])
 
-  const supported = Boolean(event) && !isIos() && !installed
+  const supported = Boolean(event) && !installed
 
   const install = async () => {
     if (!event) return
@@ -39,5 +41,5 @@ export function useInstallPrompt() {
     setEvent(null)
   }
 
-  return { supported, install }
+  return { supported, installed, install }
 }
