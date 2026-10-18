@@ -1,5 +1,5 @@
 import { Navigate, useParams } from 'react-router-dom'
-import { ContactForm } from '@/components/shared/ContactForm'
+import { Button } from '@/components/ui/Button'
 import { Seo } from '@/components/shared/Seo'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { Section } from '@/components/ui/Section'
@@ -28,9 +28,9 @@ export function ServiceDetails() {
       <div className="service-items-grid">
         {service.items.filter(item => item.active).map(item => <ServiceItemCard key={item.slug} service={service} item={item} />)}
       </div>
-      <div className="mt-10 max-w-xl">
-        <ContactForm key={service.slug} prefillService={service.title} />
-      </div>
+      <Button to={`/contact?service=${encodeURIComponent(service.slug)}`} className="mt-10">
+        {serviceCopy.request}
+      </Button>
     </Section>
   )
 }

@@ -184,8 +184,8 @@ button.card-hitarea { width: 100%; height: 100%; cursor: pointer; }
 .card-tag { display: inline-flex; align-items: center; padding: .15rem .75rem; border-radius: 100px; border: 1px solid #ffffff55; }
 .card-description-toggle { position: absolute; bottom: 1rem; left: 1.5rem; z-index: 2; display: none; align-items: center; gap: .35rem; min-height: 44px; padding: .25rem .6rem; border-radius: 100px; color: inherit; background: transparent; border: 1px solid currentColor; font-size: .75rem; }
 .geometric-art { display: block; height: 184px; width: 100%; margin: 1.5rem auto -.75rem; color: #667085; transition: color .3s, transform .4s; }
-.service-card, .project-card, .blog-card, .service-discover { --card-title-offset: 0px; min-height: 360px; }
-.service-card .card-details, .project-card .card-details, .blog-card .card-details, .service-discover .card-details { min-height: 170px; }
+.service-card, .project-card, .service-discover { --card-title-offset: 0px; min-height: 360px; }
+.service-card .card-details, .project-card .card-details, .service-discover .card-details { min-height: 170px; }
 .service-discover { min-width: 0; }
 .service-discover .card-illustration { height: 215px; }
 .service-discover .card-illustration__tile { width: 170px; height: 154px; }

@@ -1,0 +1,18 @@
+/* Native SVG cursors track immediately and remain available offline. */
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  html body {
+    cursor: url('/cursors/circle.svg') 16 16, auto;
+  }
+
+  html body :is(a[href], button:not(:disabled), [role='button']:not([aria-disabled='true']), [role='combobox'], [role='option'], summary, label[for], select, input[type='checkbox'], input[type='radio']) {
+    cursor: url('/cursors/action.svg') 16 16, pointer;
+  }
+
+  html body :is(input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='button']):not([type='submit']):not([type='reset']):not([type='color']), textarea, [contenteditable='true']) {
+    cursor: text;
+  }
+
+  html body :is(button:disabled, input:disabled, select:disabled, textarea:disabled, [aria-disabled='true']) {
+    cursor: not-allowed;
+  }
+}

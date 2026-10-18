@@ -12,10 +12,6 @@ const Portfolio = lazy(() => import('@/pages/Portfolio').then((m) => ({ default:
 const ProjectDetails = lazy(() =>
   import('@/pages/ProjectDetails').then((m) => ({ default: m.ProjectDetails })),
 )
-const Blog = lazy(() => import('@/pages/Blog').then((m) => ({ default: m.Blog })))
-const BlogDetails = lazy(() =>
-  import('@/pages/BlogDetails').then((m) => ({ default: m.BlogDetails })),
-)
 const Contact = lazy(() => import('@/pages/Contact').then((m) => ({ default: m.Contact })))
 const Privacy = lazy(() => import('@/pages/Privacy').then((m) => ({ default: m.Privacy })))
 const NotFound = lazy(() => import('@/pages/NotFound').then((m) => ({ default: m.NotFound })))
@@ -38,8 +34,6 @@ export default function App() {
             <Route path="services/:slug" element={<ServiceDetails />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="portfolio/:slug" element={<ProjectDetails />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:slug" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy" element={<Privacy />} />
             <Route path="404" element={<NotFound />} />
